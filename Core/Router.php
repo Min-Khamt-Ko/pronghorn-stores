@@ -48,6 +48,12 @@ class Router
         return $this->add($url, $controller, 'PATCH');
     }
 
+    public function abort($statusCode = 404){
+        http_response_code($statusCode);
+        require base_path('view/404.php');
+        exit();
+    }
+
     public function route($url, $method)
     {
         foreach ($this->routes as $route){
@@ -55,11 +61,7 @@ class Router
                 return require base_path($route['controller']);
             }
         }
-    }
-
-    public function getter()
-    {
-        dd($this->routes);
+        $this -> abort();
     }
 
 }
