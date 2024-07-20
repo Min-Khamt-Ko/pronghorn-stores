@@ -3,7 +3,8 @@
         <div class="flex space-x-6 items-center">
             <div class="logo">
                 <a href="/">
-                    <h1 class="text-3xl font-bold">Logo</h1>
+                    <img src="./img/logo-text.png" alt="" style="width:110px; height:80px;">
+<!--                    <h1 class="text-3xl font-bold">Logo</h1>-->
                 </a>
             </div>
             <div class="text-md space-x-6">
@@ -15,6 +16,6 @@
         </div>
         <div class="flex gap-10 font-semibold">
             <p>Search</p>
-            <a href="#">Login</a>
+            <a href="/login">Login</a>
         </div>
 </nav>

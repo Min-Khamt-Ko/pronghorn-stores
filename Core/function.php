@@ -23,3 +23,8 @@ function abort($statusCode = 404){
     http_response_code($statusCode);
     require base_path('view/404.php');
 }
+
+function redirect($path){
+    header("Location: {$path}");
+    exit();
+}

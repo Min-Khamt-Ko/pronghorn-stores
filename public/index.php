@@ -4,6 +4,10 @@ const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . "Core/function.php";
 
+spl_autoload_register(function ($class) {
+    $class = str_replace("\\", "/", $class) . ".php";
+    require BASE_PATH . $class;
+});
 
 require base_path('Core/Router.php');
 $router = new Core\Router();
