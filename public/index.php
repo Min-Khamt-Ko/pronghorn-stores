@@ -16,13 +16,12 @@ $uri = $_SERVER['REQUEST_URI'];
 require base_path('Core/Router.php');
 $router = new Core\Router();
 
-$router->get('/', 'controllers/product/index.php');
-$router->get('/men', 'controllers/product/men.php');
-$router->get('/women', 'controllers/product/women.php');
+$router->route('url',"get");
 
-$router->getter();
 
-abort();
+//$router->getter();
+//
+//abort();
 
 
 
