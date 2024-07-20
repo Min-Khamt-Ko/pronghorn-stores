@@ -1,19 +1,15 @@
 <?php
 
 
-//$routes = [
-//    '/' => 'controllers/product/index.php',
-//    '/men' => 'controllers/product/men.php',
-//    '/women' => 'controllers/product/women.php',
-//    '/bags' => 'controllers/product/bags.php',
-//    '/collections' => 'controllers/product/collections.php',
-//];
-
-$router = new Core\Router();
-
-$router->get('/', 'controllers/product/index.php');
-
-$router->getter();
+//require 'Router.php';
+//$router = new Core\Router();
+//
+//$router->get('/', 'controllers/product/index.php');
+//$router->get('/men', 'controllers/product/men.php');
+//$router->get('/women', 'controllers/product/women.php');
+//$router->get('/collectoions', 'controllers/product/collectoions.php');
+//
+//$router->getter();
 
 
 
