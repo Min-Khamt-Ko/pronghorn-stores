@@ -3,16 +3,18 @@
 namespace Core;
 use PDO;
 
+
 class Database
 {
-    private $pdo;
+    private $connection;
 
-    public function __construct(){
-        $this->pdo = new PDO("mysql:host=localhost;dbname=pronghornexpress;charset=utf8mb4", "root", "");
+    public function __construct($config){
+        $dsn = "mysql:" . http_build_query($config,'',';')
+        $this->connection = new PDO($dsn, "root", "");
     }
 
     public function getAllUsers() {
-        $stmt = $this->pdo->prepare("SELECT * FROM users");
+        $stmt = $this->connection->prepare("SELECT * FROM users");
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
