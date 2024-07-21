@@ -16,6 +16,6 @@
         </div>
         <div class="flex gap-10 font-semibold">
             <p>Search</p>
-            <a href="/login">Login</a>
+            <a href="/register">Sign Up</a>
         </div>
 </nav>
