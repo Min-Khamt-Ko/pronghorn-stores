@@ -54,10 +54,19 @@ class Router
         exit();
     }
 
+    public function only($key){
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
+    }
+
     public function route($url, $method)
     {
         foreach ($this->routes as $route){
             if ($route['url'] === $url && $route['method'] === strtoupper($method)) {
+                if($route['middleware'] == 'guest'){
+                    if($_SESSION['user'] ?? false){
+                        redirect('/');
+                    }
+                }
                 return require base_path($route['controller']);
             }
         }

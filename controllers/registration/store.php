@@ -10,21 +10,12 @@ $errors = [];
 
 
 if (!Validator::isString($user_name, 1, 20)) {
-//    $errors['name'] =[
-//        "User Name can't be empty or more than 20 characters"
-//    ];
     $errors['name'] = "User Name can't be empty or more than 20 characters";
 }
 if (!Validator::email($email)) {
-//    $errors[] =[
-//        'email' => "Email is invalid"
-//    ];
     $errors['email'] = "Email is invalid";
 }
 if (!Validator::isString($password, 4, 100)) {
-//    $errors[''] =[
-//        'password' => "Please enter a valid password"
-//    ];
     $errors['password'] = "Please enter a valid password";
 }
 if (count($errors)) {
@@ -42,11 +33,11 @@ if ($user) {
     redirect('/login');
 }
 
-$db->query("INSERT INTO users (name, email, password) VALUES (:name, :email, :password)", [
-    ':name' => $user_name,
+$db->query("INSERT INTO users (email, password,name) VALUES (:email, :password,:name)",[
     ':email' => $email,
-    ':password' => password_hash($password, PASSWORD_DEFAULT)
+    ':password' => password_hash($password, PASSWORD_DEFAULT),
+    ':name' => $user_name
 ]);
 
-login($user_name,$email);
+login($user_name, $email);
 redirect('/');
