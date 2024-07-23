@@ -28,3 +28,10 @@ function redirect($path){
     header("Location: {$path}");
     exit();
 }
+
+function login($user_name,$user_email){
+    $_SESSION['user']=[
+        'user_name' => $user_name,
+        'user_email' => $user_email
+    ];
+}

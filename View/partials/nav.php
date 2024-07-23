@@ -16,6 +16,14 @@
         </div>
         <div class="flex gap-10 font-semibold">
             <p>Search</p>
+            <?php if(isset($_SESSION['user']['user_name'])): ?>
+                <?= $_SESSION['user']['user_name'] ?>
+                <form action="/session" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="text-gray-600">Log out</button>
+                </form>
+            <?php else:?>
             <a href="/register">Sign Up</a>
+            <?php endif; ?>
         </div>
 </nav>

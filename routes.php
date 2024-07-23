@@ -10,6 +10,10 @@ $router->get('/collections', 'controllers/product/collections.php');
 $router->get('/register', 'controllers/registration/create.php');
 $router->post('/register', 'controllers/registration/store.php');
 
+$router->get('/login', 'controllers/session/login.php');
+$router->post('/login', 'controllers/session/store.php');
+$router->delete('/session', 'controllers/session/destroy.php');
+
 
 
 
