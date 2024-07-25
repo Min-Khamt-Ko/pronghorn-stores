@@ -1,24 +1,21 @@
 <?php
 
 use Core\Authenticator;
-use Core\Database;
-use Core\Validator;
+use Form\LoginForm;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
-$errors = [];
 
-if (!Validator::email($email)) {
-    $errors['email'] = "Email is invalid";
-}
-if (!Validator::isString($password, 1, 100)) {
-    $errors['password'] = "Please enter a valid password";
-}
-if (count($errors)) {
-    return view('/session/login.view.php', ['errors' => $errors]);
-}
 
-$login = new Authenticator($email, $password);
+$form = LoginForm::validate($attributes = [
+    'email' => $email,
+    'password' => $password
+]);
 
-$login->attempt($email, $password);
+$signIn = (new Authenticator())->attempt($attributes['email'], $attributes['password']);
+
+if(!$signIn){
+    $form->error('email', "No matching account found for that email address and password.") ->throw();
+}
+redirect('/');
 
