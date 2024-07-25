@@ -1,5 +1,9 @@
 <?php require base_path('view/partials/head.php') ?>
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+<section class="max-h-screen">
+    <a href="/" class="pt-16 pl-10 block">
+        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19.908"><path d="M17 7.908H8v4h9V14l4-4.043-4-4.043v1.994z"/><path d="M13.919 6.908V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v15.908a2 2 0 0 0 2 2h9.919a2 2 0 0 0 2-2v-5h-6.87v-6z"/></svg>
+    </a>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 mt-10">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto h-20 w-auto" src="./img/logo-text.png" alt="Your Company">
         <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Up your
@@ -48,3 +52,4 @@
         </p>
     </div>
 </div>
+</section>

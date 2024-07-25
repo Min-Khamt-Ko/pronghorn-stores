@@ -16,7 +16,7 @@ class Authenticator
         ])->fetch();
         if($user){
             if(password_verify($password, $user['password'])){
-                $this -> login(['email'=>$user['email'],'user_id'=>$user['id'],'user_name'=>$user['name']]);
+                $this -> login(['user_email'=>$user['email'],'user_id'=>$user['id'],'user_name'=>$user['name']]);
                 return true;
             }
         }
@@ -25,7 +25,8 @@ class Authenticator
     }
 
     public function login($user){
-
+        $_SESSION['user']=$user;
+        redirect('/');
     }
 
 

@@ -68,7 +68,7 @@ class Router
                 return require base_path($route['controller']);
             }
         }
-        $this -> abort();
+        return $this -> abort();
     }
 
 }
