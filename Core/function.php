@@ -1,5 +1,7 @@
 <?php
 
+use Core\Session;
+
 function dd($value)
 {
 
@@ -29,9 +31,17 @@ function redirect($path){
     exit();
 }
 
+function previouseUrl(){
+    return $_SERVER['HTTP_REFERER'];
+}
+
 function login($user_name,$user_email){
     $_SESSION['user']=[
         'user_name' => $user_name,
         'user_email' => $user_email
     ];
+}
+
+function old($key,$default = ""){
+    return Session::get('old')[$key] ?? $default;
 }
