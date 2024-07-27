@@ -14,6 +14,9 @@ $router->get('/login', 'controllers/session/login.php')->only('guest');
 $router->post('/login', 'controllers/session/store.php');
 $router->delete('/session', 'controllers/session/destory.php');
 
+$router->get('/add-product', 'controllers/product/addProduct.php')->only('auth');
+$router->post('/product-info', 'controllers/product/product-info.php');
+
 
 
 
