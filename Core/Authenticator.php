@@ -24,6 +24,10 @@ class Authenticator
 
     }
 
+    public static function password_checking($password,$cf_password){
+        return $password === $cf_password;
+    }
+
     public function login($user){
         $_SESSION['user']=$user;
         redirect('/');

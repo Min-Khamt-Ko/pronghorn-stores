@@ -6,8 +6,7 @@
     <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 mt-10">
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
         <img class="mx-auto h-20 w-auto" src="./img/logo-text.png" alt="Your Company">
-        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Up your
-            account</h2>
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Up your account</h2>
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -16,14 +15,16 @@
                 <label for="name" class="block text-sm font-medium leading-6 text-gray-900">User Name</label>
                 <div class="mt-2">
                     <input id="name" name="name" type="text"
-                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                           placeholder="Please input your name" value="<?= old("user_name") ?>"
+                    >
                     <p class="text-sm text-red-500"><?= $errors['name'] ?? ' ' ?></p>
                 </div>
             </div>
             <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">
-                    <input id="email" name="email" type="email" autocomplete="email"
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="Provide your email" value="<?= old('email') ?>"
                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     <p class="text-sm text-red-500"><?= $errors['email'] ?? ' ' ?></p>
                 </div>
@@ -32,9 +33,18 @@
             <div>
                 <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
                 <div class="mt-2">
-                    <input id="password" name="password" type="password" autocomplete="current-password"
+                    <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter password"
                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                     <p class="text-sm text-red-500"><?= $errors['password'] ?? ' ' ?></p>
+                </div>
+            </div>
+
+            <div>
+                <label for="cf_password" class="block text-sm font-medium leading-6 text-gray-900">Confirm Password</label>
+                <div class="mt-2">
+                    <input id="cf_password" name="cf_password" type="password" autocomplete="current-password" placeholder="Confirm your password"
+                           class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <p class="text-sm text-red-500"><?= $errors['cf_password'] ?? ' ' ?></p>
                 </div>
             </div>
 

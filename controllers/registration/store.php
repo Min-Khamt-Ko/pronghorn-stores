@@ -2,15 +2,15 @@
 
 use Core\Authenticator;
 use Core\Database;
-use Core\Validator;
-use Form\LoginForm;
+use Form\RegisterForm;
 
 $user_name = $_POST['name'];
 $user_email = $_POST['email'];
 $password = $_POST['password'];
+$cf_password = $_POST['cf_password'];
 $errors = [];
 
-$form = LoginForm::validate($attributes = [
+$form = RegisterForm::validate($attributes = [
     'user_name' => $user_name,
     'email' => $user_email,
     'password' => $password
@@ -25,6 +25,10 @@ $user = $db->query("select * from users where email=:email", [
 
 if ($user) {
     redirect('/login');
+}
+
+if(!Authenticator::password_checking($password, $cf_password)){
+    $form->error('cf_password',"confirm password should be same with password")->throw();
 }
 
 $db->query("INSERT INTO users (email, password,name) VALUES (:email, :password,:name)", [

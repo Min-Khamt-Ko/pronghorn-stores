@@ -22,6 +22,9 @@ class RegisterForm
         if (!Validator::isString($attributes['password'], 1, 100)) {
             $this->errors['password'] = "Please enter a valid password";
         }
+        if(!Validator::isString($attributes['password'], 2, 100)) {
+            $this->errors['cf_password'] = "Confirm password should be same with password.";
+        }
     }
 
     public static function validate($attributes)
