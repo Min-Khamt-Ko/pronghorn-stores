@@ -160,8 +160,19 @@
                     Add to bag
                 </button>
             </form>
-        </div>
-        </div>
+            <div class="flex w-full gap-x-10">
+                <div class="flex-1">
+            <form action="/destory" method="POST">
+                <input type="hidden" name="id" value="<?= $product['id'] ?>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="mt-10 flex items-center justify-center py-3 w-full rounded-md border border-transparent text-red-500 bg-gray-200">Delete</button>
+            </form>
+                </div>
+                <div class="flex-1">
+                    <a href="/edit?id=<?=$product['id']?>" class="mt-10 flex items-center justify-center py-3 w-full rounded-md border border-transparent text-red-500 bg-gray-200">Edit</a>
+                </div>
+                </div>
+            </div>
     </section>
 </main>
 
