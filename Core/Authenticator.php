@@ -11,7 +11,7 @@ class Authenticator
     }
 
     public function attempt($email, $password){
-        $user = $this ->db ->query('select * from users where email = :email',[
+        $user = $this -> db -> query('select * from users where email = :email',[
             'email' => $email
         ])->fetch();
         if($user){

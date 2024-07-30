@@ -17,7 +17,7 @@ $router->delete('/session', 'controllers/session/destory.php');
 $router->get('/add-product', 'controllers/product/addProduct.php')->only('auth');
 $router->post('/product-info', 'controllers/product/product-info.php')->only('auth');
 
-$router->get('/product', 'controllers/product/product.php')->only('auth');
+$router->get('/product', 'controllers/product/product.php');
 $router->get('/edit', 'controllers/product/edit.php')->only('auth');
 $router->patch('/update', 'controllers/product/update.php')->only('auth');
 $router->delete('/destory', 'controllers/product/destory.php')->only('auth');

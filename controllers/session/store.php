@@ -17,5 +17,5 @@ $signIn = (new Authenticator())->attempt($attributes['email'], $attributes['pass
 if(!$signIn){
     $form->error('email', "No matching account found for that email address and password.") ->throw();
 }
-redirect('/');
+
 
