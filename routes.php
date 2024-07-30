@@ -19,6 +19,7 @@ $router->post('/product-info', 'controllers/product/product-info.php')->only('au
 
 $router->get('/product', 'controllers/product/product.php')->only('auth');
 $router->get('/edit', 'controllers/product/edit.php')->only('auth');
+$router->patch('/update', 'controllers/product/update.php')->only('auth');
 $router->delete('/destory', 'controllers/product/destory.php')->only('auth');
 
 

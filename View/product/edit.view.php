@@ -4,6 +4,9 @@
 <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <form method="POST" action="/update" enctype="multipart/form-data">
+            <input type="hidden" name="_method" value="patch">
+            <input type="hidden" name="id" value="<?= $product['id'] ?>">
+            <input type="hidden" name="image_path" value="<?= $product['image_path'] ?>">
             <div class="space-y-12">
                 <div class="border-b border-gray-900/10 pb-12">
                     <h2 class="text-base font-semibold leading-7 text-gray-900">Edit your product</h2>
@@ -50,7 +53,7 @@
                                         <label for="file-upload"
                                                class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
                                             <span>Upload a file</span>
-                                            <input id="file-upload" name="file-upload" type="file" class="sr-only" value="<?=$product['image_path'] ?>">
+                                            <input id="file-upload" name="file-upload" type="file" class="sr-only">
                                         </label>
                                         <p class="pl-1">or drag and drop</p>
                                     </div>
